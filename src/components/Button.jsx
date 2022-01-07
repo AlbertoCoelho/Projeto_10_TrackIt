@@ -4,6 +4,7 @@ const Button = styled.button`
   height: 45px;
   width: 100%;
   background-color: ${(props) => typeof props.active !== 'boolean' || props.active ? "#52B6FF" : "#888"};
+  opacity: ${ (props) => props.desabilitar ? 0.7 : 1 };
   color: #FFFFFF;
 
   font-family: 'Lexend Deca', sans-serif;

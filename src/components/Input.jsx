@@ -18,9 +18,13 @@ const Input = styled.input`
   margin-bottom: 10px;
   border-radius: 4px;
 
-  ::placeholder {
+  &::placeholder {
     color: #DBDBDB;
     font-family: 'Lexend Deca', sans-serif;
+  }
+
+  &::disabled {
+    background-color: #F2F2F2;
   }
 `;
 
