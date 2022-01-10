@@ -92,6 +92,7 @@ const MenuComponent = styled.nav`
 const Button = styled.button`
   border: none;
   cursor: pointer;
+  background-color: rgba(0,0,0,0);
 `
 
 const CircularProgressbarWrapper = styled.div`
