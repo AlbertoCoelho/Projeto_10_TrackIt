@@ -2,7 +2,6 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
 
-
 import MinhaLogo from '../../assets/imagemlogo.png';
 import { Centralizador, Container, Logo, StyledLink } from './style';
 import Button from '../../components/Button';
@@ -17,14 +16,10 @@ const SignUp = () => {
     image:"",
     password:""
   });
-  const [disableButton, setDisableButton] = useState(false)
+
   const [isLoading, setIsLoading] = useState( {placeholder: "Cadastrar", disabled: false} );
 
   const navigate = useNavigate();
-
-  const changeButton = () => {
-    disableButton ? setDisableButton(false) : setDisableButton(true);
-  }
 
   const handleSignUp = (e) => {
     e.preventDefault();
@@ -45,6 +40,8 @@ const SignUp = () => {
     promise.catch(() => {
       alert("Por favor, preenche os dados corretamente");
       isLoading.placeholder = "Cadastrar";
+      isLoading.disabled = false;
+      setIsLoading({...isLoading});
     });
   } 
 
@@ -94,7 +91,7 @@ return (
           disabled={isLoading.disabled && "disabled"}
           required
         />
-        <Button type="submit" desabilitar={disableButton} onClick={changeButton} >
+        <Button type="submit" desabilitar={isLoading.disabled}>
         {isLoading.placeholder}
         </Button>
       </form>
